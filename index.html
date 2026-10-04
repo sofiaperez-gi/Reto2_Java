@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gestión de Notas de Certámenes</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <div class="container">
+    <h1>Sistema de Gestión Académica</h1>
+    <p class="subtitle">Ingreso y cálculo de notas para 10 alumnos</p>
+
+    <div class="card">
+      <form id="alumnoForm">
+        <div class="form-group"> 
+          <label for="nombre">Nombre:</label>
+          <input type="text" id="nombre" placeholder="Ingrese el nombre" required>
+        </div>
+
+        <div class="form-group">
+          <label for="certamen1">Certamen 1:</label>
+          <input type="number" id="certamen1" min="0" max="100" step="0.1" placeholder="Nota 0 - 100" required>
+        </div>
+
+        <div class="form-group">
+          <label for="certamen2">Certamen 2:</label>
+          <input type="number" id="certamen2" min="0" max="100" step="0.1" placeholder="Nota 0 - 100" required>
+        </div>
+
+        <div class="form-group">
+          <label for="certamen3">Certamen 3:</label>
+          <input type="number" id="certamen3" min="0" max="100" step="0.1" placeholder="Nota 0 - 100" required>
+        </div>
+
+        <button type="submit" id="btnAgregar" class="btn">Agregar Alumno</button>
+      </form>
+      
+      <div id="mensaje" class="mensaje hidden"></div>
+      
+      <div class="counter">
+        Alumnos registrados: <span id="contador">0</span> / 10
+      </div>
+    </div>
+
+    <div id="seccionResultados" class="card hidden">
+      <h2>Resultados del Curso</h2>
+      
+      <div id="reporteTexto" class="reporte-box"></div>
+
+      <h3 style="margin-top: 20px;">Ranking de Alumnos (Ordenados por Promedio)</h3>
+      <table class="tabla-ranking">
+        <thead>
+          <tr>
+            <th>Posición</th>
+            <th>Nombre</th>
+            <th>Promedio</th>
+            <th>Estado</th>
+          </tr>
+        </thead>
+        <tbody id="tablaRankingBody"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
